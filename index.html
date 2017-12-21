@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--        Basic style for website look and feel as well as base appearance of tree elements such as node Circles and lines-->
+        <link rel="stylesheet" href="main.css">
+<!--        Scripts used for building the tree, drawing it, and evaluating the response to the question, respectively-->
+        <script type="text/javascript" src="js/BST.js"></script>
+        <script type="text/javascript" src="js/Drawing.js"></script>
+        <script type="text/javascript" src="js/Questions.js"></script>
+        
+        
+    </head>
+<body onload="buildQuestions();draw_Random_Tree(6);"><!-- Draw a random tree as soon as the page is loaded -->
+    <select id="question_select" onchange="setQuestion(this.value);">
+        <option hidden="true">Change the current question</option>
+    </select>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="tree" x="0" y="0" width="100%" height="100%">
+            <defs>
+<!--                this section contains definitions for reused shapes and elements in the drawing-->
+<!--                Currently empty, all styles are defined in the Stylessheet-->
+            </defs>
+<!--            Lines layer is behind all other layers-->
+            <g id="lines"></g>
+<!--            Nodes layer is behind text-->
+            <g id="nodes"></g>
+<!--            Text layer must be above nodes to be visible-->
+            <g id="text"></g>
+        </svg>
+        <p id="question"></p>
+        <button type="button" onclick="draw_Random_Tree(12);">New Tree</button><!-- Try a new tree, resets results and drawing without reloading page -->
+    </body>
+</html>
+
+
